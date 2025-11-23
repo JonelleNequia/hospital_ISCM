@@ -1,0 +1,9 @@
+/* Print styles: hide sidebar and toolbar, make content full-width */
+@media print {
+  .sidebar, .page-toolbar, .topbar, nav.nav { display: none !important; }
+  body, .layout, .content { width: 100% !important; height: auto !important; overflow: visible !important; }
+  .content { padding: 0 !important; }
+  table { page-break-inside: avoid; border-collapse: collapse; }
+  th, td { border: 1px solid #ddd !important; padding: 6px !important; }
+  a[href]:after { content: " (" attr(href) ")"; font-size: 75%; }
+}

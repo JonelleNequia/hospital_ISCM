@@ -1,0 +1,86 @@
+
+/* Sidebar Layout (palette-preserved) */
+:root{ --sidebar-w: 232px; }
+html,body{height:100%}
+body{margin:0; padding:0}
+.layout{display:flex; min-height:100vh;}
+
+.sidebar{ width:var(--sidebar-w); display:flex; flex-direction:column; padding:14px 12px; }
+.brand{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.brand img{ width:34px; height:34px; object-fit:contain; }
+.brand .title{ font-weight:700; line-height:1.1; font-size:13px; text-transform:uppercase; letter-spacing:.38px; }
+
+.nav{ display:flex; flex-direction:column; gap:4px; margin-top:6px; }
+.nav a{ display:flex; align-items:center; gap:8px; padding:7px 9px; border-radius:8px; text-decoration:none; }
+.nav a.active{ outline:2px solid rgba(0,0,0,.08); }
+.nav .section{ margin-top:8px; font-size:12px; opacity:.82; padding:4px 6px; }
+
+.content{ flex:1; padding:16px 18px; }
+.container{ max-width: 1200px; margin: 0; }
+
+/* Tighten general spacing */
+h1{ margin: 2px 0 10px; }
+.card{ margin: 10px 0; padding:12px; border-radius:10px; }
+.grid{ gap:10px }
+.input, select.input, textarea.input{ padding:8px 10px; border-radius:8px }
+.btn{ padding:8px 12px; border-radius:8px }
+
+/* Tables */
+.table{ width:100%; border-collapse:separate; border-spacing:0 }
+.table th, .table td{ padding:8px 10px; }
+.table thead th{ position:sticky; top:0; z-index:1 }
+.table tbody tr:hover td{ filter:brightness(.985) }
+
+/* Search bar utilities (works even if markup varies) */
+.searchbar, .search, form.search { display:flex; gap:8px; align-items:center; margin: 8px 0 10px; }
+.searchbar .input, .search .input, form.search .input,
+.searchbar input[type="search"], .search input[type="search"], form.search input[type="search"],
+.searchbar input[name="q"], .search input[name="q"], form.search input[name="q"] {
+  min-width: 220px; max-width: 420px;
+}
+.searchbar .btn, .search .btn, form.search .btn{ padding:7px 10px; border-radius:8px }
+
+/* Responsive */
+@media (max-width: 960px){
+  :root{ --sidebar-w: 200px; }
+}
+@media (max-width: 720px){
+  .sidebar{ position:fixed; z-index:1000; transform: translateX(-100%);
+    transition: .2s transform; background:inherit; height:100vh; }
+  .sidebar.open{ transform: translateX(0); }
+  .content{ padding:14px; }
+}
+
+
+/* === Evergreen UX pass (compact spacing & responsiveness) === */
+
+/* Compact heading and section spacing */
+h1, h2, h3 { margin: 6px 0 12px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 12px; }
+
+/* Cards & grids */
+.card { padding: 14px; border-radius: 14px; }
+.grid { gap: 12px; }
+.table th, .table td { padding: 8px 10px; }
+.table thead th{ position:sticky; top:0; z-index:1 }
+.table tbody tr:hover td{ filter:brightness(.985) }
+
+/* Search bar utilities (works even if markup varies) */
+.searchbar, .search, form.search { display:flex; gap:8px; align-items:center; margin: 8px 0 10px; }
+.searchbar .input, .search .input, form.search .input,
+.searchbar input[type="search"], .search input[type="search"], form.search input[type="search"],
+.searchbar input[name="q"], .search input[name="q"], form.search input[name="q"] {
+  min-width: 220px; max-width: 420px;
+}
+.searchbar .btn, .search .btn, form.search .btn{ padding:7px 10px; border-radius:8px }
+
+/* Responsive */
+@media (max-width: 960px){
+  :root{ --sidebar-w: 200px; }
+}
+@media (max-width: 720px){
+  .sidebar{ position:fixed; z-index:1000; transform: translateX(-100%);
+    transition: .2s transform; background:inherit; height:100vh; }
+  .sidebar.open{ transform: translateX(0); }
+  .content{ padding:14px; }
+}
